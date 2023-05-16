@@ -85,11 +85,11 @@ class CustomerImpl {
 	public void handle(GroceryStoreImpl store) {
     Scanner input = new Scanner(System.in);
         int choose;
-         List<Product> cart;
-        int tprice=0;
+         List<Product> cart = new ArrayList<>();
+        double tprice=0;
         System.out.println("Available products:");
          for (Product product : store.inventory) {
-             System.out.println(product.getId() + ". " + product.getName() + " - $" + product.getPrice());
+             System.out.println(product.getId() + ". " + product.getName() + " - RS " + product.getPrice());
          }
         
         do{
@@ -123,7 +123,7 @@ class CustomerImpl {
 		
 	}
 
-
+}
 class OwnerImpl {
 
 	public void handle(GroceryStoreImpl store) {
