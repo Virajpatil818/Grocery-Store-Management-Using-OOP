@@ -57,9 +57,9 @@ public class GroceryStore {
 	        }
 	        System.out.println("Here is your receipt:");
             for (Product product : cart) {
-                System.out.println(product.getName() + " - $" + product.getPrice());
+                System.out.println(product.getName() + " - RS" + product.getPrice());
             }
-            System.out.println("Total: $" + totalCost);
+            System.out.println("Total: RS" + totalCost);
 	    }
 	    public Product getProduct(int productId) {
 	    	for (int i = 0; i < inventory.size(); i++) {
@@ -88,14 +88,10 @@ class CustomerImpl {
          List<Product> cart;
         int tprice=0;
         System.out.println("Available products:");
-        // for (Product product : store.inventory) {
-        //     System.out.println(product.getId() + ". " + product.getName() + " - $" + product.getPrice());
-        // }
+         for (Product product : store.inventory) {
+             System.out.println(product.getId() + ". " + product.getName() + " - $" + product.getPrice());
+         }
         
-         for (int i = 0; i < inventory.size(); i++) {
-	             System.out.println(inventory.get(i).getId() + ". " + inventory.get(i).getName() + " - RS" + inventory.get(i).getPrice());
-	        }
-
         do{
             System.out.println("Enter the ID of the product you want to buy:");
             int productId = input.nextInt();
@@ -123,11 +119,7 @@ class CustomerImpl {
          choose=input.nextInt();
         }while(choose!=0);
         
-        for (int i = 0; i < cart.size(); i++) {
-	             System.out.println("*****Receipt*****");
-	             System.out.println(cart.get(i).getId() + ". " + cart.get(i).getName() + " - RS" + cart.get(i).getPrice());
-        }
-        System.out.println("*****Total price:***** Rs" + tprice);
+        store.checkout(cart);
 		
 	}
 
