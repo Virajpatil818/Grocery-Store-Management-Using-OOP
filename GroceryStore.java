@@ -91,6 +91,10 @@ class CustomerImpl {
         int choose;
         List<Product> cart = new ArrayList<>();
         double tprice=0;
+         if (store.inventory.isEmpty()) {
+            System.out.println("Sorry, the inventory is empty. Please try again later.");
+            return;
+        }
         System.out.println("Available products:");
         for (Product product : store.inventory) {
             System.out.println(product.getId() + ". " + product.getName() + " - RS " + product.getPrice());
