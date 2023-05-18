@@ -121,7 +121,7 @@ class CustomerImpl {
             }
             System.out.println("Want to generate receipt (1)OR Continue(0):");
             choose=input.nextInt();
-        }while(choose!=0);
+        }while(choose!=1);
 
         store.checkout(cart);
 
