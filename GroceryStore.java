@@ -137,7 +137,7 @@ class OwnerImpl {
         List<Product> inventory = store.inventory;
         for (int i = 0, inventorySize = inventory.size(); i < inventorySize; i++) {
             Product product = inventory.get(i);
-            System.out.println(product.getId() + ". " + product.getName() + " - $" + product.getPrice());
+            System.out.println(product.getId() + ". " + product.getName() + " - Rs" + product.getPrice());
         }
         System.out.println("Choose an action:");
         System.out.println("1. Add product");
